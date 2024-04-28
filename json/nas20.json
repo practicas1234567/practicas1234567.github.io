@@ -1,0 +1,202 @@
+[
+  {
+    "company": "Microsoft",
+    "symbol": "MSFT",
+    "max": 340.12,
+    "min": 320.45,
+    "currency": "USD",
+    "change": "+2%",
+    "url": "https://www.microsoft.com",
+    "path": "img/MSFT.jpg"
+  },
+  {
+    "company": "Apple",
+    "symbol": "AAPL",
+    "max": 180.65,
+    "min": 170.20,
+    "currency": "USD",
+    "change": "-1.5%",
+    "url": "https://www.apple.com",
+    "path": "img/AAPL.jpg"
+  },
+  {
+    "company": "Amazon",
+    "symbol": "AMZN",
+    "max": 3250.30,
+    "min": 3100.50,
+    "currency": "USD",
+    "change": "+3.2%",
+    "url": "https://www.amazon.com",
+    "path": "img/AMZN.jpg"
+  },
+  {
+    "company": "Google",
+    "symbol": "GOOGL",
+    "max": 2800.00,
+    "min": 2650.20,
+    "currency": "USD",
+    "change": "-0.8%",
+    "url": "https://www.google.com",
+    "path": "img/GOOGL.jpg"
+  },
+  {
+    "company": "Facebook",
+    "symbol": "FB",
+    "max": 360.50,
+    "min": 340.75,
+    "currency": "USD",
+    "change": "+1.7%",
+    "url": "https://www.facebook.com",
+    "path": "img/FB.jpg"
+  },
+  {
+    "company": "Tesla",
+    "symbol": "TSLA",
+    "max": 800.00,
+    "min": 750.25,
+    "currency": "USD",
+    "change": "+5%",
+    "url": "https://www.tesla.com",
+    "path": "img/TSLA.jpg"
+  },
+  {
+    "company": "NVIDIA",
+    "symbol": "NVDA",
+    "max": 700.50,
+    "min": 670.20,
+    "currency": "USD",
+    "change": "-0.3%",
+    "url": "https://www.nvidia.com",
+    "path": "img/NVDA.jpg"
+  },
+  {
+    "company": "Netflix",
+    "symbol": "NFLX",
+    "max": 700.00,
+    "min": 650.30,
+    "currency": "USD",
+    "change": "+2.8%",
+    "url": "https://www.netflix.com",
+    "path": "img/NFLX.jpg"
+  },
+  {
+    "company": "Intel",
+    "symbol": "INTC",
+    "max": 70.50,
+    "min": 65.20,
+    "currency": "USD",
+    "change": "-0.5%",
+    "url": "https://www.intel.com",
+    "path": "img/INTC.jpg"
+  },
+  {
+    "company": "Cisco",
+    "symbol": "CSCO",
+    "max": 55.60,
+    "min": 50.40,
+    "currency": "USD",
+    "change": "+0.9%",
+    "url": "https://www.cisco.com",
+    "path": "img/CSCO.jpg"
+  },
+  {
+    "company": "Adobe",
+    "symbol": "ADBE",
+    "max": 650.80,
+    "min": 620.30,
+    "currency": "USD",
+    "change": "-2.1%",
+    "url": "https://www.adobe.com",
+    "path": "img/ADBE.jpg"
+  },
+  {
+    "company": "PayPal",
+    "symbol": "PYPL",
+    "max": 300.00,
+    "min": 280.50,
+    "currency": "USD",
+    "change": "+1.3%",
+    "url": "https://www.paypal.com",
+    "path": "img/PYPL.jpg"
+  },
+  {
+    "company": "Salesforce",
+    "symbol": "CRM",
+    "max": 270.50,
+    "min": 250.20,
+    "currency": "USD",
+    "change": "-0.6%",
+    "url": "https://www.salesforce.com",
+    "path": "img/CRM.jpg"
+  },
+  {
+    "company": "Zoom",
+    "symbol": "ZM",
+    "max": 400.00,
+    "min": 380.20,
+    "currency": "USD",
+    "change": "+2.5%",
+    "url": "https://www.zoom.us",
+    "path": "img/ZM.jpg"
+  },
+  {
+    "company": "Oracle",
+    "symbol": "ORCL",
+    "max": 80.00,
+    "min": 75.20,
+    "currency": "USD",
+    "change": "-1.2%",
+    "url": "https://www.oracle.com",
+    "path": "img/ORCL.jpg"
+  },
+  {
+    "company": "IBM",
+    "symbol": "IBM",
+    "max": 140.00,
+    "min": 130.20,
+    "currency": "USD",
+    "change": "+0.7%",
+    "url": "https://www.ibm.com",
+    "path": "img/IBM.jpg"
+  },
+  {
+    "company": "Qualcomm",
+    "symbol": "QCOM",
+    "max": 150.50,
+    "min": 140.20,
+    "currency": "USD",
+    "change": "-0.4%",
+    "url": "https://www.qualcomm.com",
+    "path": "img/QCOM.jpg"
+  },
+  {
+    "company": "AMD",
+    "symbol": "AMD",
+    "max": 120.50,
+    "min": 110.20,
+    "currency": "USD",
+    "change": "+1.8%",
+    "url": "https://www.amd.com",
+    "path": "img/AMD.jpg"
+  },
+  {
+    "company": "Micron",
+    "symbol": "MU",
+    "max": 90.50,
+    "min": 85.20,
+    "currency": "USD",
+    "change": "-0.9%",
+    "url": "https://www.micron.com",
+    "path": "img/MU.jpg"
+  },
+  {
+    "company": "Twitter",
+    "symbol": "TWTR",
+    "max": 70.50,
+    "min": 65.20,
+    "currency": "USD",
+    "change": "+0.5%",
+    "url": "https://www.twitter.com",
+    "path": "img/TWTR.jpg"
+  }
+]

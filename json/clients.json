@@ -1,0 +1,68 @@
+[
+  {
+    "name": "administrador",
+    "mail": "practicas.1234567@gmail.com",
+    "invest": 0,
+    "message": "Hello"
+  },
+  {
+    "name": "JohnSmith",
+    "mail": "john.smith@example.com",
+    "invest": 2,
+    "message": "Interested in exploring investment opportunities."
+  },
+  {
+    "name": "Emily Johnson",
+    "mail": "emily.johnson@example.com",
+    "invest": 1,
+    "message": "Looking to invest in a new venture."
+  },
+  {
+    "name": "Michael Williams",
+    "mail": "michael.williams@example.com",
+    "invest": 3,
+    "message": "Interested in large-scale investments."
+  },
+  {
+    "name": "Sophia Brown",
+    "mail": "sophia.brown@example.com",
+    "invest": 1,
+    "message": "Exploring investment opportunities in tech startups."
+  },
+  {
+    "name": "James Miller",
+    "mail": "james.miller@example.com",
+    "invest": 2,
+    "message": "Interested in mid-range investments."
+  },
+  {
+    "name": "Olivia Davis",
+    "mail": "olivia.davis@example.com",
+    "invest": 3,
+    "message": "Looking for high-yield investment options."
+  },
+  {
+    "name": "William Wilson",
+    "mail": "william.wilson@example.com",
+    "invest": 1,
+    "message": "Exploring opportunities in real estate."
+  },
+  {
+    "name": "Emma Moore",
+    "mail": "emma.moore@example.com",
+    "invest": 2,
+    "message": "Interested in investing in renewable energy projects."
+  },
+  {
+    "name": "Alexander Taylor",
+    "mail": "alexander.taylor@example.com",
+    "invest": 3,
+    "message": "Seeking investment opportunities in emerging markets."
+  },
+  {
+    "name": "Isabella Anderson",
+    "mail": "isabella.anderson@example.com",
+    "invest": 1,
+    "message": "Looking for investment opportunities in healthcare."
+  }
+]

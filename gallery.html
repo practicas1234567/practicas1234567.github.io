@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+       <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css"> <!-- include our CSS  -->
+</head>
+<body>
+  <div class="background-image"></div> <!-- Div  background image -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="index.html">LM site</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="enterprises.html">Enterprises</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="graphics.html">Graphics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="carousel.html">Carousel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="clients.html">Clients</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+        <h1 class="text-center">Gallery of Images</h1>
+         <!-- Botons de control de separació -->
+    <div class="btn-group mt-3">
+      <button type="button" class="btn btn-primary" id="zoom-in">Zoom in</button>
+      <button type="button" class="btn btn-primary" id="zoom-out">Zoom out</button>
+     <!-- <label for="temperature-range">K-color image:</label>-->
+      <input type="range" class="form-control-range" id="temperature-range" min="0" max="360" step="1" value="180">
+    </div>
+
+        <div class="row" id="image-gallery">
+       
+            <!-- La galeria d'imatges es generada dinàmicament des del JSON -->
+      
+        </div>
+    </div>
+    <footer class="container-fluid bg-dark text-light fixed-bottom">
+        <div id="nasdaq-scroll" class="nasdaq-scroll row row-cols-1 row-cols-sm-2"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <p>&copy; 2024 All rights are reserved LM&Tony</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+   <!-- jQuery Bootstrap JS vertical menu -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+</div>
+</body>
+</html>

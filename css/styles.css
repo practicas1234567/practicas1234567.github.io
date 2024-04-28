@@ -1,0 +1,112 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Per permetre que el div de fons ocupi tot l'espai */
+  background-repeat: repeat;
+}
+
+.background-image {
+  background-image: url('/img/money.png');
+  background-size: cover;
+  /*background-position: center;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Per enviar la imatge de fons darrere del contingut */
+  opacity: 0.15; /* Opacitat de la imatge de fons */
+}
+/* style for graphics */
+
+#chartContainer {
+  width: 100%;
+  height: 400px;
+}
+
+  /* Estilos adicionales  header*/
+    .navbar-nav .nav-link {
+      transition: background-color 0.3s ease;
+      border-radius: 20px; /* Añadimos bordes redondeados a los enlaces */
+      padding: 8px 15px; /* Espaciado interno */
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+
+/* Style carousel*/
+/* Limit top  footer */
+footer {
+  margin-top: 50px; /* Ajusta a la mida que necessitis */
+} 
+
+
+   .carousel-item img {
+      max-height: 550px;
+      margin:auto;
+    }
+
+
+     /* Gallery styles */
+     .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      max-width: 100%;
+      overflow: hidden; 
+  }
+  
+  .gallery img {
+      width: auto; /* Fer que les imatges s'ajustin a la seva mida original */
+      max-width: 300px; /* Assegurar que les imatges no superin una mida màxima */
+      height: auto; /* Fer que les imatges es dimensionin proporcionalment */
+      margin: 10px auto; /* Centrar les imatges horitzontalment amb marge automàtic */
+      display: block; /* Assegurar que les imatges es mostren com a blocs per aplicar el marge automàtic */
+      transition: transform 0.3s ease-in-out; /* Afegim una transició suau */
+  }
+ 
+  .img-thumbnail {
+    width: 200px; /* Define el nou ample de les imatges */
+    height: auto; /* Altura automàtica per mantenir l'escala */
+}
+#image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra les imatges horitzontalment */
+    align-items: center; /* Centra les imatges verticalment */
+    max-width: 100%; /* Assegurar que la galeria no superi l'ample del contenidor */
+    overflow: hidden; /* Evitar que les imatges es mostren fora dels límits */
+}
+
+  
+   
+    #image-gallery-container #image-gallery {
+      display: flex;
+      justify-content: center; /* Centra les imatges horitzontalment */
+      align-items: center; /* Centra les imatges verticalment */
+  }
+  
+    .nasdaq-scroll {
+      white-space: nowrap; /* Evita saltos de línea */
+      overflow-x: auto;
+    }
+    
+    .company-container {
+      display: inline-block;
+      width: 100%; /* Ocupa todo el ancho por defecto */
+    }
+    
+    @media (min-width: 576px) {
+      .company-container {
+        width: 50%; /* Ocupa la mitad del ancho en dispositivos pequeños */
+      }
+    }
+    
+
+
+
