@@ -4,11 +4,21 @@
     <!-- Doctype and language -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LM index</title>
+    <title>LM Project</title>
     <!-- External CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css"> <!-- include our CSS  -->
-
+    <style>
+        #assistant {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
   <div class="background-image"></div> <!-- Div  background image -->
@@ -34,9 +44,6 @@
             <a class="nav-link" href="carousel.html">Carousel</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="simulator.html">Simulator</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
           <li class="nav-item">
@@ -48,40 +55,39 @@
   </header>
 
   <main class="light">
-    <div class="container mt-5"> <!--separation from top-->
-      <h1 class="text-center">About LM&Tony</h1>
-      <br>
-      <p>Welcome to <b>LM&Tony</b>, your partner in the world of stock market investment. We take pride in offering you an exceptional investment experience, backed by decades of expertise and an innovative approach. At <b>LM&Tony</b>, we are dedicated to helping our clients achieve their financial goals through smart strategies and thorough market analysis.</p>
-      <p>With a team of financial and technological experts, we are committed to providing you with the tools and knowledge needed to make informed decisions and maximize your investments. From novice investors to seasoned professionals, our personalized approach caters to your individual needs and goals.</p>
-      <p>At LM&Tony, we believe in transparency, integrity, and excellence in customer service. We invite you to join us on this exciting journey toward financial success. Start investing with confidence today with <b>LM&Tony!</b></p>
-    </div>
+    
   </main>
 
-  
-  <div id="assistant" >
-    <p class="me-3">Hello! How can I assist you today? Go to the <a href="contact.html">contact page</a>?</p>
-    <img src="img/assistant.jpeg" alt="Assistant">
-    <p class="me-3"> Tony </p>
-  </div>
-
-
-  <footer id="myFooter" class="container-fluid bg-dark text-light fixed-bottom">
+  <footer class="container-fluid bg-dark text-light fixed-bottom">
     <div id="nasdaq-scroll" class="nasdaq-scroll row row-cols-1 row-cols-sm-2"></div>
     <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <p>&copy; 2024 All rights are reserved LM&Tony</p>
-            </div>
+      <div class="row">
+        <div class="col text-center">
+          <p>&copy; 2024 All rights are reserved LM&Tony</p>
         </div>
+      </div>
     </div>
   </footer>
-
 <!-- jQuery Bootstrap JS vertical menu -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- External JS -->
 <script src="js/script.js"></script>
+<script>
+    let timer;
+    document.addEventListener("DOMContentLoaded", function() {
+        timer = setTimeout(showAssistant, 5000);
+    });
+
+    function showAssistant() {
+        clearTimeout(timer);
+        document.getElementById("assistant").style.display = "block";
+    }
+</script>
+<div id="assistant">
+    <p>Hello! How can I assist you today?</p>
+    <p>May I know your name?</p>
 </div>
 </body>
 </html>

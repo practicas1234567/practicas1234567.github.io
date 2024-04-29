@@ -8,10 +8,12 @@ body, html {
 }
 
 .background-image {
+ 
   background-image: url('/img/money.png');
   background-size: cover;
   /*background-position: center;*/
-  position: absolute;
+  /*position: absolute;*/ 
+   position: fixed;  background-repeat: no-repeat;
   top: 0;
   left: 0;
   width: 100%;
@@ -26,6 +28,26 @@ body, html {
   height: 400px;
 }
 
+/*Assistant*/
+ #assistant {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+  #assistant img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+        }
+
   /* Estilos adicionales  header*/
     .navbar-nav .nav-link {
       transition: background-color 0.3s ease;
@@ -37,12 +59,25 @@ body, html {
       background-color: rgba(0, 0, 0, 0.1);
     }
 
-
-/* Style carousel*/
-/* Limit top  footer */
+/*footer*/
+/* Style carousel Limit top  footer */
 footer {
   margin-top: 50px; /* Ajusta a la mida que necessitis */
 } 
+#myFooter {
+  visibility: visible; /* Por defecto, el footer es visible */
+}
+
+#myFooter:hover {
+  visibility: hidden; /* Al pasar el ratón sobre el footer, se oculta */
+}
+#myFooter:hover {
+  visibility: hidden; /* Oculta el footer al hacer hover */
+}
+
+#myFooter:hover #nasdaq-scroll {
+  animation-play-state: paused; /* Pausa la animación de nasdaq-scroll al hacer hover en el footer */
+}
 
 
    .carousel-item img {

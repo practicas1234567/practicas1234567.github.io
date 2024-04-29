@@ -1,4 +1,13 @@
+//assistant
+let timer;
+document.addEventListener("DOMContentLoaded", function() {
+    timer = setTimeout(showAssistant, 5000);
+});
 
+function showAssistant() {
+    clearTimeout(timer);
+    document.getElementById("assistant").style.display = "block";
+}
 
 // External Carousell
 
@@ -165,7 +174,7 @@ function adjustImageSize(value) {
         })
         
  // URL JSON images gallery
- document.body.style.overflowY = "hidden"; ///bloqueja scroll vertical
+ // document.body.style.overflowY = "hidden"; ///bloqueja scroll vertical
 
 var jsonPath = "/json/nas20.json";
 
@@ -287,4 +296,45 @@ $(document).ready(function() {
     fetchAndPopulateCarousel();
   });
 
- 
+ //clients function
+  
+ document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  // Retrieve last comments from JSON
+  fetch('/json/clients.json')
+    .then(response => response.json())
+    .then(data => {
+      const matchingClients = data.filter(client => client.name === name && client.mail === email); // Filtra los clientes que coinciden con el nombre y correo electrónico proporcionados en el formulario
+      if (matchingClients.length > 0) {
+        const lastClient = matchingClients[matchingClients.length - 1]; // Toma el último cliente que coincide
+        const lastComment = lastClient.message; // Toma el último comentario del cliente
+        const interest = lastClient.invest; // Obtiene el interés del cliente
+        const interestText = getInterestText(interest);
+        const combinedText = `Last Comment:\n${lastComment}\n\nInterest:\n${interestText}`;
+        document.getElementById('lastComments').value = combinedText;
+      } else {
+        document.getElementById('lastComments').value = 'No comments found for the provided name and email.';
+      }
+    })
+    .catch(error => console.error('Error retrieving last comments:', error)); // Print any errors to the console
+});
+
+function resetForm() {
+  document.getElementById('contactForm').reset(); // Reset the form
+  document.getElementById('lastComments').value = ''; // Clear the last comments textarea
+}
+
+function getInterestText(interest) {
+  switch (interest) {
+    case 1:
+      return '(1,000-10,000$) - Initial investment.';
+    case 2:
+      return '(10,000-100,000$) -  Mid-range investments.';
+    case 3:
+      return '1 million or more - large-scale investments.';
+    default:
+      return '';
+  }
+}

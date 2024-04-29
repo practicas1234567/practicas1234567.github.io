@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Simulator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Profit Simulator</h1>
+        <div class="mb-3">
+            <label for="riskRange" class="form-label">Risk: <span id="riskValue">(%)</span></label>
+            <input type="range" class="form-range" id="riskRange" min="-99" max="99" value="-1">
+        </div>
+        <div class="mb-3">
+            <label for="capitalRange" class="form-label">Capital: <span id="capitalValue">$1000</span></label>
+            <input type="range" class="form-range" id="capitalRange" min="1000" max="20000000" step="1000" value="1000">
+        </div>
+        <canvas id="profitChart" width="800" height="400"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const riskRange = document.getElementById('riskRange');
+            const capitalRange = document.getElementById('capitalRange');
+            const riskValue = document.getElementById('riskValue');
+            const capitalValue = document.getElementById('capitalValue');
+            const ctx = document.getElementById('profitChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Array.from({ length: 11 }, (_, i) => 2024 + i), // Array from 2024 to 2034
+                    datasets: [{
+                        label: 'Profits',
+                        data: [],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            stacked: true,
+                            title: {
+                                display: true,
+                                text: 'Years'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    const units = ['', 'K', 'M', 'B'];
+                                    const unitIndex = Math.floor(Math.log10(value) / 3);
+                                    return value / Math.pow(10, unitIndex * 3) + units[unitIndex];
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            function updateChart() {
+                const risk = parseInt(riskRange.value);
+                const capital = parseInt(capitalRange.value);
+                const dataProfits = chart.data.datasets[0].data;
+
+                riskValue.textContent = `(${risk}%)`;
+                capitalValue.textContent = `$${capital}`;
+
+                dataProfits.length = 0; // clear previous data
+                
+                let accumulatedProfit = capital;
+                let growthRate = 0; // Default growth rate
+
+                if (risk >= -70 && risk < -50) {
+                    growthRate = 0.3; // 30% growth rate for risk range from -70% to -50%
+                } else if (risk >= -90 && risk < -70) {
+                    growthRate = 0.75; // 75% growth rate for risk range from -90% to -70%
+                } else if (risk >= -50 && risk < -30) {
+                    growthRate = 0.1; // 10% growth rate for risk range from -50% to -30%
+                } else if (risk >= -30 && risk < -10) {
+                    growthRate = 0.2; // 20% growth rate for risk range from -30% to -10%
+                } else if (risk >= -10 && risk <= -1) {
+                    growthRate = 0.05; // 5% growth rate for risk range from -10% to -1%
+                }
+
+                for (let i = 1; i <= 11; i++) {
+                    const profit = accumulatedProfit * growthRate; // Simple formula, can be adjusted
+                    accumulatedProfit += profit;
+                    dataProfits.push(accumulatedProfit);
+                }
+
+                chart.update();
+            }
+
+            // Update chart when range inputs change
+            riskRange.addEventListener('input', updateChart);
+            capitalRange.addEventListener('input', updateChart);
+
+            // Initial chart update
+            updateChart();
+        });
+    </script>
+</body>
+</html>
