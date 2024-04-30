@@ -7,7 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
 function showAssistant() {
     clearTimeout(timer);
     document.getElementById("assistant").style.display = "block";
-}
+    
+     //Add a click event to hide the assistant when clicking on it
+     document.getElementById("assistant").addEventListener("click", hideAssistantOnClick);
+    }
+    
+    function hideAssistantOnClick() {
+        document.getElementById("assistant").style.display = "none";
+    }
+
+
 
 // External Carousell
 
@@ -16,15 +25,13 @@ function adjustImageSize(value) {
     var images = document.querySelectorAll('.carousel-item img');
     value = parseInt(value);
     images.forEach(function(image) {
-        image.style.maxWidth = value + '%'; // Ajusta l'amplada màxima de les imatges
-        image.style.height = 'auto'; // Manté l'altura proporcional
+        image.style.maxWidth = value + '%'; // Adjust witdh image max
+        image.style.height = 'auto'; // Mantain  proportinal rate
     });
 }
 
 
   // Fetch data from nas20.json
-
-
   
   function updateFooter(data) {
     const nasdaqScroll = document.getElementById('nasdaq-scroll');
@@ -37,9 +44,9 @@ function adjustImageSize(value) {
       // Set color based on change value
       let textColorClass = '';
       if (change > 0) {
-        textColorClass = 'text-success'; // Verde para cambio positivo
+        textColorClass = 'text-success'; // Green to positive change
       } else if (change < 0) {
-        textColorClass = 'text-danger'; // Rojo para cambio negativo
+        textColorClass = 'text-danger'; // Red to negative change
       }
 
       // Populate row with company information
@@ -93,7 +100,7 @@ function adjustImageSize(value) {
             for (var i = 0; i < enterprises.length; i++) {
                 var enterprise = enterprises[i];
                 if (i % 2 === 0) {
-                    // everi two enterprises, create a new  row
+                    // every two enterprises, create a new  row
                     row = document.createElement("tr");
                 }
                 var companyCell = document.createElement("td");
@@ -174,7 +181,6 @@ function adjustImageSize(value) {
         })
         
  // URL JSON images gallery
- // document.body.style.overflowY = "hidden"; ///bloqueja scroll vertical
 
 var jsonPath = "/json/nas20.json";
 
@@ -203,12 +209,12 @@ function populateGallery(images, imagesPerRow) {
             imagesInCurrentRow = 0;
         }
         var imageElement = document.createElement("div");
-        imageElement.classList.add("col-md-" + (12 / imagesPerRow)); // Modifica el nombre de columnes en base a les imatges per fila
+        imageElement.classList.add("col-md-" + (12 / imagesPerRow)); // Modify rows in function of number of images
         imageElement.classList.add("image-item-" + index);
         var img = document.createElement("img");
         img.src = image.path;
         img.alt = image.company;
-        img.classList.add("img-thumbnail"); // Afegit estil per reduir la mida de les imatges
+        img.classList.add("img-thumbnail"); // Reduce size of images
         imageElement.appendChild(img);
         imageRow.appendChild(imageElement);
         imagesInCurrentRow++;
@@ -262,7 +268,7 @@ $(document).ready(function() {
     });
 });
 
-// Afegim el teu JavaScript per carregar les imatges del JSON 
+//  Javascrip to load images from JSON
 
   function fetchAndPopulateCarousel() {
     fetch("/json/nas20.json")
@@ -275,7 +281,7 @@ $(document).ready(function() {
 
   function populateCarousel(images) {
     var carouselInner = document.querySelector(".carousel-inner");
-    carouselInner.innerHTML = ''; // Netegem el contingut actual del carrusel
+    carouselInner.innerHTML = ''; // Clear content from  carousel
     images.forEach((image, index) => {
       var carouselItem = document.createElement("div");
       carouselItem.classList.add("carousel-item");
@@ -306,11 +312,11 @@ $(document).ready(function() {
   fetch('/json/clients.json')
     .then(response => response.json())
     .then(data => {
-      const matchingClients = data.filter(client => client.name === name && client.mail === email); // Filtra los clientes que coinciden con el nombre y correo electrónico proporcionados en el formulario
       if (matchingClients.length > 0) {
-        const lastClient = matchingClients[matchingClients.length - 1]; // Toma el último cliente que coincide
-        const lastComment = lastClient.message; // Toma el último comentario del cliente
-        const interest = lastClient.invest; // Obtiene el interés del cliente
+      const matchingClients = data.filter(client => client.name === name && client.mail === email); // Clients filter thatmatch with nomber and email from formulary
+        const lastClient = matchingClients[matchingClients.length - 1]; // Get the last client that mach
+        const lastComment = lastClient.message; // Get  the last commnet from client
+        const interest = lastClient.invest; //Get cliet interest
         const interestText = getInterestText(interest);
         const combinedText = `Last Comment:\n${lastComment}\n\nInterest:\n${interestText}`;
         document.getElementById('lastComments').value = combinedText;
