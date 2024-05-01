@@ -304,7 +304,7 @@ $(document).ready(function() {
 
  //clients function
   
- document.getElementById('contactForm').addEventListener('submit', function(event) {
+ /*document.getElementById('contactForm').addEventListener('submit', function(event) {
   event.preventDefault();
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
@@ -317,6 +317,29 @@ $(document).ready(function() {
         const lastClient = matchingClients[matchingClients.length - 1]; // Get the last client that mach
         const lastComment = lastClient.message; // Get  the last commnet from client
         const interest = lastClient.invest; //Get cliet interest
+        const interestText = getInterestText(interest);
+        const combinedText = `Last Comment:\n${lastComment}\n\nInterest:\n${interestText}`;
+        document.getElementById('lastComments').value = combinedText;
+      } else {
+        document.getElementById('lastComments').value = 'No comments found for the provided name and email.';
+      }
+    })
+    .catch(error => console.error('Error retrieving last comments:', error)); // Print any errors to the console
+});*/
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  // Retrieve last comments from JSON
+  fetch('/json/clients.json')
+    .then(response => response.json())
+    .then(data => {
+      const matchingClients = data.filter(client => client.name === name && client.mail === email); // Mover esta línea aquí
+      if (matchingClients.length > 0) {
+        const lastClient = matchingClients[matchingClients.length - 1]; // Get the last client that matches
+        const lastComment = lastClient.message; // Get the last comment from client
+        const interest = lastClient.invest; // Get client interest
         const interestText = getInterestText(interest);
         const combinedText = `Last Comment:\n${lastComment}\n\nInterest:\n${interestText}`;
         document.getElementById('lastComments').value = combinedText;
