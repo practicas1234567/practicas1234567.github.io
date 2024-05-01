@@ -1,0 +1,164 @@
+/* general styles*/
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*position: relative; /* To div background fill  space */
+}
+/*style for background image*/
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/money.png');/*Image path*/
+  background-size: cover;
+  animation: cycleColors 5s linear infinite, wave 20s infinite alternate; /* Adjust time of two animations*/
+  z-index: -1; /* To send background level -1 */
+  opacity: 0.19; /* Opacity background */
+}
+
+@keyframes cycleColors {
+  0% {
+      filter: hue-rotate(0deg); /* original color */
+  }
+  100% {
+      filter: hue-rotate(360deg); /* color change goal */
+  }
+}
+
+@keyframes wave {    
+  0% {
+      transform: skewY(2deg);
+  }
+  50% {
+      transform: skewY(-2deg);
+  }
+  100% {
+      transform: skewY(2deg);
+  }
+}
+
+
+/* style for graphics */
+#chartContainer {
+  width: 100%;
+  height: 400px;
+}
+
+/*Assistant*/
+ #assistant {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);         
+        }
+
+  #assistant img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+        }
+
+/* Additionals  header style*/
+
+.navbar-nav .nav-link {
+  transition: background-color 0.3s ease;
+  border-radius: 20px; /* border round to the links*/
+  padding: 8px 15px; /* Internal space */
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+  
+/*footer*/
+/* Style carousel Limit top  footer */
+footer {
+  margin-top: 50px; /* Adjust margin top */
+} 
+#myFooter {
+  visibility: visible; /* Set foottes visible as default */
+}
+
+#myFooter:hover {
+  visibility: hidden; /* hiden mouse footer, when mouse is over */
+}
+
+/* Pauses the nasdaq-scroll animation when hovering over the footer */
+#myFooter:hover #nasdaq-scroll {
+  animation-play-state: paused;
+}
+
+/* Carousel styles */
+.carousel-item img {
+  max-height: 550px;
+  margin: auto;
+}
+
+/* Gallery styles */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 100%;
+  overflow: hidden; 
+}
+
+.gallery img {
+  width: auto; /* Make images adjust to their original size */
+  max-width: 300px; /* Ensure images do not exceed a maximum size */
+  height: auto; /* Ensure images resize proportionally */
+  margin: 10px auto; /* Center images horizontally with automatic margin */
+  display: block; /* Ensure images are displayed as blocks to apply automatic margin */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition */
+}  
+
+.img-thumbnail {
+  width: 200px; /* Define the new width of images */
+  height: auto; /* Automatic height to maintain scale */ 
+}
+
+#image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    max-width: 100%; /* Ensure the gallery does not exceed the container's width */
+    overflow: hidden; /* Prevent images from displaying beyond the boundaries */
+}
+
+#image-gallery-container #image-gallery {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
+}
+
+.nasdaq-scroll {
+  white-space: nowrap; /* Prevent line breaks */
+  overflow-x: auto;
+}
+
+.company-container {
+  display: inline-block;
+  width: 100%; /* Occupy full width by default */
+}
+
+@media (min-width: 576px) {
+  .company-container {
+    width: 50%; /* Occupy half of the width on small devices */
+  }
+}
+
+    
+
+
+
