@@ -3,7 +3,7 @@ body, html {
   height: 100%;
   margin: 0;
   padding: 0;
-  position: relative; /* To div background fill  space */
+  /*position: relative; /* To div background fill  space */
 }
 /*style for background image*/
 .background-image {
@@ -68,6 +68,7 @@ body, html {
         }
 
 /* Additionals  header style*/
+
 .navbar-nav .nav-link {
   transition: background-color 0.3s ease;
   border-radius: 20px; /* border round to the links*/
